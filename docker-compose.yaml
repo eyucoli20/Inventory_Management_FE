@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  
+  javapp:
+    build: ../Inventory-Management
+    container_name: java_c
+    ports:
+       - '3000:3000' 
+    stdin_open: true
+    tty: true
+  
+  
