@@ -65,7 +65,7 @@ export default function AddToShelve() {
         style={{ margin: "10px" }}
         name="minThreshold"
         fullWidth
-        // label="expiryDate"
+        label="minThreshold"
         type="number"
         value={formik.values.minThreshold}
         onChange={formik.handleChange}
@@ -80,7 +80,7 @@ export default function AddToShelve() {
         onChange={formik.handleChange}
       />
 
-<TextField
+      <TextField
         style={{ margin: "10px" }}
         name="numericOrWeightValue"
         fullWidth
@@ -97,13 +97,25 @@ export default function AddToShelve() {
       >
         {isLoading ? "Adding..." : "Add"}
       </Button>
-      <p style={{color:'green'}}>{isSuccess ? data?.data?.message : ""}</p>
-      <p style={{ color: "red" }}>{isError ? error?.response?.data.maxThreshold : ""}</p>
-      <p style={{ color: "red" }}>{isError ? error?.response?.data.minThreshold : ""}</p>
-      <p style={{ color: "red" }}>{isError ? error?.response?.data.productID : ""}</p>
-      <p style={{ color: "red" }}>{isError ? error?.response?.data.quantityOnShelf: ""}</p>
-      <p style={{ color: "red" }}>{isError ? error?.response?.data.numericOrWeightValue: ""}</p>
-      <p style={{ color: "red" }}>{isError ? error?.response?.data.message: ""}</p>
+      <p style={{ color: "green" }}>{isSuccess ? data?.data?.message : ""}</p>
+      <p style={{ color: "red" }}>
+        {isError ? error?.response?.data.maxThreshold : ""}
+      </p>
+      <p style={{ color: "red" }}>
+        {isError ? error?.response?.data.minThreshold : ""}
+      </p>
+      <p style={{ color: "red" }}>
+        {isError ? error?.response?.data.productID : ""}
+      </p>
+      <p style={{ color: "red" }}>
+        {isError ? error?.response?.data.quantityOnShelf : ""}
+      </p>
+      <p style={{ color: "red" }}>
+        {isError ? error?.response?.data.numericOrWeightValue : ""}
+      </p>
+      <p style={{ color: "red" }}>
+        {isError ? error?.response?.data.message : ""}
+      </p>
     </Box>
   );
 }

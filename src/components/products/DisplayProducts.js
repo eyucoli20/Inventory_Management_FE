@@ -64,9 +64,7 @@ function DisplayProducts() {
   const formik = useFormik({
     initialValues: {
       productID: "",
-      productName: "",
-      expiryDate: "",
-      timeDurationForMarkDown: "",
+    
     },
   });
   const [singleData,setSingleData] = useState([])

@@ -10,14 +10,13 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-      <AppBar />
-        <Routes>
-          <Route index  element={<Product />} />
-          <Route exact path="/Shelve" element={<Shelve />} />
-        </Routes>
-      </QueryClientProvider>
-        
+        <QueryClientProvider client={queryClient}>
+          <AppBar />
+          <Routes>
+            <Route index element={<Product />} />
+            <Route exact path="/Shelve" element={<Shelve />} />
+          </Routes>
+        </QueryClientProvider>
       </BrowserRouter>
     </div>
   );

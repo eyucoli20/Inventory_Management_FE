@@ -1,6 +1,6 @@
 import { useState } from 'react';
+import { baseURL } from '../constant';
 
-const API_BASE_URL = 'https://shelf-83w3.onrender.com'; // Replace with your backend API endpoint
 
 const useApi = () => {
   const [loading, setLoading] = useState(false);
@@ -9,7 +9,7 @@ const useApi = () => {
   const get = async (endpoint) => {
     setLoading(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/${endpoint}`);
+      const response = await fetch(`${baseURL}${endpoint}`);
 
       if (response.status === 404) {
         throw await response.json();
@@ -28,7 +28,7 @@ const useApi = () => {
   const post = async (endpoint, data) => {
     setLoading(true);
     try {
-      const response = await fetch(`${API_BASE_URL}`, {
+      const response = await fetch(`${baseURL}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

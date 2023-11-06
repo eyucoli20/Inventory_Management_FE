@@ -96,6 +96,7 @@ function DisplayProductToRefill() {
   const [singleData,setSingleData] = useState([])
   const { loading, error, get,clearError} = useApi();
   
+  
 
   const handleGet = () => {
     const fetchData = async () => {
@@ -158,17 +159,15 @@ function DisplayProductToRefill() {
               >
                 {loading ? "Fetching..." : "Display"}
               </Button>
-              
             </div>
-            
           </div>
           <MaterialReactTable
             state={{ isLoading: loading }}
             columns={columns1}
             data={singleData}
           />
-          <p style={{color:'red'}}>{error?error?.message:''}</p>
-        
+          <p style={{ color: "red" }}>{error ? error?.message : ""}</p>
+          <p style={{color:'red'}}>{singleData[0]?.body?.message}</p>
         </Paper>
       </Box>
     </div>

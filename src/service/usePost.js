@@ -6,6 +6,7 @@ const postData = async (endpoint, data) => {
     const config = {
       headers: {
         "Content-Type": "application/json",
+        
       },
     };
     const response = await axios.post(`${baseURL}${endpoint}`, data, config);
